@@ -5,7 +5,6 @@ class Conectar
 {
     // Variable que almacenará la conexión PDO
     protected $dbh;
-
     // Método para establecer la conexión
     protected function Conexion()
     {
@@ -16,15 +15,12 @@ class Conectar
                 "root",
                 ""
             );
-
             // Retorna la conexión establecida
             return $this->dbh;
 
         } catch (Exception $e) {
-
             // Muestra el mensaje si ocurre un error de conexión
             print "Error BD: " . $e->getMessage() . "<br/>";
-
             // Detiene la ejecución del programa
             die();
         }

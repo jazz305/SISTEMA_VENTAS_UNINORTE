@@ -37,10 +37,10 @@ switch ($_GET["op"]) {
         $datos=$producto->get_producto_x_id($_POST["prod_id"]);
         if(empty($_POST["prod_id"])){
             if(is_array($datos)==true and count($datos)==0){
-                $producto->insert_product($_POST["prod_nom"]);
+                $producto->insert_producto($_POST["prod_nom"]);
             }
         }else{
-            $producto->update_product($_POST["prod_id"],$_POST["prod_nom"]);
+            $producto->update_producto($_POST["prod_id"],$_POST["prod_nom"]);
         }
         break;
 
@@ -52,6 +52,7 @@ switch ($_GET["op"]) {
                 $output["prod_nom"] = $row["prod_nom"];
             }
         }
+        echo json_encode($output);
         break;
 
     case "eliminar":
